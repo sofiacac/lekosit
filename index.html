@@ -1,0 +1,181 @@
+// ...existing code...
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sofia Čačková</title>
+  <meta name="description" content="Osobné portfólio — projekty, zručnosti a kontakt." />
+  <style>
+    :root{
+      --bg:#fff0f6;
+      --card:#fff;
+      --accent:#ff6fa3;
+      --accent-2:#ff98c6;
+      --muted:#8a5771;
+      --glass: rgba(255,111,163,0.08);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#2b1020;line-height:1.5}
+    header{backdrop-filter:blur(6px);background:linear-gradient(90deg,rgba(255,255,255,0.6),rgba(255,255,255,0.4));position:sticky;top:0;border-bottom:1px solid rgba(0,0,0,0.04);z-index:10}
+    .wrap{max-width:1000px;margin:0 auto;padding:18px;display:flex;align-items:center;gap:16px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(255,111,163,0.12)
+    }
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    main{max-width:1000px;margin:28px auto;padding:0 18px}
+    .hero{background:var(--card);padding:28px;border-radius:12px;box-shadow:0 8px 30px rgba(140,40,85,0.06);display:flex;gap:18px;align-items:center}
+    .hero .info h1{margin:0;font-size:22px}
+    .hero .info p{margin:8px 0 0;color:var(--muted)}
+    .cta{margin-top:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;text-decoration:none;font-weight:700}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(140,40,85,0.04)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{border-radius:10px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);padding:12px;display:flex;gap:12px;align-items:center}
+    .thumb{width:72px;height:72px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .meta h4{margin:0 0 6px;font-size:15px}
+    .meta p{margin:0;color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{background:rgba(0,0,0,0.03);padding:6px 8px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .contact-form label{display:block;font-size:13px;margin-top:8px;color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);margin-top:6px;font-family:inherit}
+    textarea{min-height:100px;resize:vertical}
+    footer{max-width:1000px;margin:28px auto;padding:18px;text-align:center;color:var(--muted)}
+    @media(max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="logo">S</div>
+      <div>
+        <div style="font-weight:800">Sofia Čačková</div>
+        <div style="font-size:12px;color:var(--muted)">Web / Dizajn / Projektové práce</div>
+      </div>
+
+      <nav aria-label="Hlavné menu">
+        <a href="#projects">Projekty</a>
+        <a href="#about">O mne</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero card" aria-labelledby="hero-title">
+      <div style="flex:1">
+        <div class="info">
+          <h1 id="hero-title">Ahoj, som Sofia</h1>
+          <p>Vytváram čisté a farebné weby, UX dizajn a malé interaktívne projekty. Skúsenosti s HTML, CSS, JavaScript a základmi backendu.</p>
+          <div class="cta">
+            <a class="btn" href="#kontakt">Kontaktuj ma</a>
+            <a style="margin-left:8px;color:var(--muted);text-decoration:none;font-weight:700" href="#projects">Moje projekty →</a>
+          </div>
+        </div>
+      </div>
+      <div style="width:140px;text-align:center">
+        <div style="width:120px;height:120px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:34px;box-shadow:0 12px 30px rgba(255,111,163,0.14)">S</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <article id="projects" class="card" aria-labelledby="projects-title">
+          <h2 id="projects-title">Vybrané projekty</h2>
+          <div class="projects" style="margin-top:12px">
+            <div class="project">
+              <div class="thumb">P1</div>
+              <div class="meta">
+                <h4>Web pre kaviareň</h4>
+                <p>Responzívny landing s rezervačným formulárom a galériou.</p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="thumb">P2</div>
+              <div class="meta">
+                <h4>Portál pre učebné materiály</h4>
+                <p>Správa obsahu a jednoduché prihlasovanie pre študentov.</p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="thumb">P3</div>
+              <div class="meta">
+                <h4>Mini hra v JS</h4>
+                <p>Interaktívna hra učená pre základy programovania.</p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="thumb">P4</div>
+              <div class="meta">
+                <h4>UI kit: Ružový</h4>
+                <p>Sada komponentov a farieb pre rýchle prototypovanie.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:14px">Zručnosti</h3>
+          <div class="skills">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Git</span>
+            <span class="chip">WordPress</span>
+          </div>
+        </article>
+
+        <article id="about" class="card" style="margin-top:18px">
+          <h2>O mne</h2>
+          <p style="color:var(--muted);margin-top:8px">Som nadšená tvorbačká webov a dizajnu s dôrazom na čistý vizuál, použiteľnosť a detail. Rada riešim malé projekty od nápadu po nasadenie.</p>
+        </article>
+      </div>
+
+      <aside class="card">
+        <h3>Kontakt</h3>
+        <p style="color:var(--muted);margin-top:6px">Napíš mi krátku správu — odpoviem do 48 hodín.</p>
+
+        <form id="kontakt" class="contact-form" style="margin-top:12px" action="mailto:sofia@example.com" method="post" enctype="text/plain">
+          <label for="name">Meno</label>
+          <input id="name" name="name" type="text" placeholder="Tvoje meno" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tvoj@email.sk" />
+
+          <label for="message">Správa</label>
+          <textarea id="message" name="message" placeholder="Čo potrebuješ?"></textarea>
+
+          <div style="margin-top:12px;text-align:right">
+            <button type="submit" class="btn" style="border:none;cursor:pointer">Odoslať</button>
+          </div>
+        </form>
+
+        <h4 style="margin-top:18px">Rýchle odkazy</h4>
+        <ul style="padding-left:1rem;margin-top:8px;color:var(--muted)">
+          <li><a href="#projects">Projekty</a></li>
+          <li><a href="#about">O mne</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:1000px;margin:0 auto;padding:12px 18px;color:var(--muted)">
+      © Sofia • Portfólio • Všetky práva vyhradené
+    </div>
+  </footer>
+</body>
+</html>
+// ...existing code...
